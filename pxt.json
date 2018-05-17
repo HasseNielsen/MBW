@@ -1,0 +1,16 @@
+{
+    "name": "MBW",
+    "version": "0.0.1",
+    "description": "A basic test for MBW",
+    "license": "Other",
+    "authors": "Hasse Lykke Nielsen",
+    "dependencies": {
+        "core": "*",
+        "radio": "*"
+    },
+    "files": [
+        "main.md"
+    ],
+    "public": true,
+    "icon": "icon.png"
+}
