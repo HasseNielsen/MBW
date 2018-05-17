@@ -20,7 +20,7 @@ namespace MBW {
      * @param password The password for the wifi
      */
     //% weight=10 blockId="wifiConfig" block="Connect to this network %ssid| with this password %password |%"
-    export function wifiConfig(ssid: "SSID", password: "PASSWORD"): void {
+    export function wifiConfig(ssid: string, password: string): void {
 
     }
 
