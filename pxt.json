@@ -9,7 +9,7 @@
         "radio": "*"
     },
     "files": [
-        "main.md"
+        "main.ts"
     ],
     "public": true,
     "icon": "icon.png"
