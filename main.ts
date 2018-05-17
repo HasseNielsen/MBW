@@ -16,11 +16,11 @@ namespace MBW {
 
     /**
      * Wifi configuration, connect to ssid with password
-     * @param ssid The wifi we connect to
-     * @param password The password for the wifi
+     * @param ssid The wifi we connect to, eg: "Your SSID"
+     * @param password The password for the wifi, eg: "Your password"
      */
     //% weight=10 blockId="wifiConfig" block="Connect to this network: |ssid %ssid| with this password: |password %password|"
-    export function wifiConfig(ssid = "ssid", password = "password"): void {
+    export function wifiConfig(ssid: string, password: string): void {
 
     }
 
