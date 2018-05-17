@@ -7,10 +7,20 @@
 namespace MBW {
 
     /**
-     * Starts a basic test, typically placed in "On Start"
+     * Starts MBW, need to be set before wifi configuration
      */
-    //% weight=10 blockId="startMBW" block="Start test"
-    export function startMBW(): void {
+    //% weight=10 blockId="start" block="start"
+    export function start(): void {
+
+    }
+
+    /**
+     * Wifi configuration, connect to ssid with password
+     * @param ssid The wifi we connect to
+     * @param password The password for the wifi
+     */
+    //% weight=10 blockId="wifiConfig" block="wifiConfig"
+    export function wifiConfig(ssid: "SSID", password: "PASSWORD"): void {
 
     }
 
