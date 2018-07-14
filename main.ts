@@ -13,7 +13,8 @@ namespace MBW {
      */
     //% weight=10 blockId="wifiConfig" block="Connect to this network: %ssid| with this password: %password"
     export function wifiConfig(ssid: string, password: string): void {
-
+        serial.writeLine("WIFI " + ssid + " " + password + "\u000D" + "\u000A")
+        basic.pause(15000)
     }
     
     /**
