@@ -7,14 +7,6 @@
 namespace MBW {
 
     /**
-     * Starts MBW, need to be set before wifi configuration
-     */
-    //% weight=10 blockId="start" block="start"
-    export function start(): void {
-
-    }
-
-    /**
      * Wifi configuration, connect to ssid with password
      * @param ssid The wifi we connect to, eg: "Your SSID"
      * @param password The password for the wifi, eg: "Your password"
@@ -24,29 +16,24 @@ namespace MBW {
 
     }
     
-    
-    
     /**
-     * TODO: Set pin RX and TX for ESP8266 Serial Wifi Module，Baud rate: 9600.
-     * @param wifiRX describe parameter here, eg: SerialPin.P0
-     * @param wifiTX describe parameter here, eg: SerialPin.P1
+     * Set pin RX and TX for ESP8266 Serial Wifi Module，Baud rate: 9600.
+     * @param wifiRX describe parameter here, eg: SerialPin.P12
+     * @param wifiTX describe parameter here, eg: SerialPin.P13
      */
     //% weight=100
     //% blockId="wifi_init" block="set ESP8266 RX %wifiRX| TX %wifiTX|at baud rate 9600"
     export function initwifi(wifiRX: SerialPin, wifiTX: SerialPin): void {
+        // Add code here
+        basic.pause(1000)
         serial.redirect(
             wifiRX,
             wifiTX,
             BaudRate.BaudRate9600
-        )
-        basic.pause(10)
-        serial.writeString("REBOOT" + "\u000D" + "\u000A")
-        basic.pause(5000)
-        serial.writeString("BLINK" + "\u000D" + "\u000A")
-        basic.pause(5000)
-        serial.writeString("OFF" + "\u000D" + "\u000A")
-        
-        // Add code here
+        )       
+        basic.pause(1000)
+        serial.writeLine("" +  "\u000D" +  "\u000A")
+        basic.pause(1000)
     }
     
      /**
@@ -55,16 +42,9 @@ namespace MBW {
      * @param key describe parameter here, eg: "your key"
      */
     //% weight=99
-    //% blockId="wifi_connect" block="connect wifi SSDI: %ssid| KEY: %key"
+    //% blockId="wifi_connect" block="connect to wifi SSDI: %ssid| KEY: %key"
     export function connectwifi(ssid: string, key: string): void {
         // Add code here
-        let text = "WIFI "
-                 + ssid
-                 + " "
-                 + key
-        
-        serial.writeString(text + "\u000D" + "\u000A")
-        basic.pause(20000)
     }
     
     /**
@@ -101,6 +81,4 @@ namespace MBW {
         basic.pause(8000)             
         // Add code here
     }
-    
-
 }
