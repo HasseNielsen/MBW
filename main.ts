@@ -41,7 +41,7 @@ namespace MBW {
         basic.pause(15000)
     }
 
-    /**
+ /**
  * ThingSpeak: Send data.
  * @param api_key describe parameter here, eg: "Din api-nøgle fra ThingSpeak"
  * @param filed1 describe parameter here, eg: 0
@@ -84,6 +84,37 @@ namespace MBW {
             + filed7
             + " "
             + filed8
+        goFetch(message)
+        basic.pause(1000)
+    }
+    
+    
+ /**
+ * IFTTT: Send web request to webhook.
+ * @param key describe parameter here, eg: "Den sidste del af din webhook url, bKYZqPvHfkrEfgyg6YVpjd"
+ * @param event_name describe parameter here, eg: "Event Name"
+ * @param value1 describe parameter here, eg: "Navn"
+ * @param value2 describe parameter here, eg: "Højde"
+ * @param value3 describe parameter here, eg: "Alder"
+ */
+    //% weight=70
+    //% blockId="ifttt_send_data"
+    //% block="IFTTT: Kald webhook|Din unikke nøgle %key|Din event %event_name|Værdi 1 %value1|Værdi 2 %value2|Værdi 3 %value3"
+    
+    export function IFTTTSendData(event_name: string,
+        value1: string,
+        value2: string,
+        value3: string): void {
+        let message = "IFTTT "
+            + key
+            + " "
+            + event_name
+            + " "
+            + value1
+            + " "
+            + value2
+            + " "
+            + value3
         goFetch(message)
         basic.pause(1000)
     }
