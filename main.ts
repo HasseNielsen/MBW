@@ -30,7 +30,10 @@ namespace MBW {
      * @param ssid Det trådløse netværk du vil forbinde til, eg: "Navnet på dit netværk"
      * @param password Kodeordet til dit netværk, eg: "Dit kodeord"
      */
-    //% weight=10 blockId="wifiConfig" block="Wifi-forbindelse|Opret forbindelse til dette netværk: %ssid|Med dette kodeord: %password"
+    //% weight=10
+    //% blockId="wifiConfig"
+    //% block="Wifi-forbindelse|Opret forbindelse til dette netværk %ssid|Med dette kodeord %password"
+    
     export function wifiConfig(ssid: string, password: string): void {
         serial.writeLine("WIFI " + ssid + " " + password + "\u000D" + "\u000A")
         basic.pause(15000)
@@ -49,7 +52,9 @@ namespace MBW {
  * @param n8 describe parameter here, eg: 0
  */
     //% weight=97
-    //% blockId="send_text" block="ThingSpeak: Send data|Din api-nøgle %write_api_key|Felt 1 %n1|Felt 2 %n2|Felt 3 %n3|Felt 4 %n4|Felt 5 %n5|Felt 6 %n6|Felt 7 %n7|Felt 8 %n8"
+    //% blockId="send_text"
+    //% block="ThingSpeak: Send data|Din api-nøgle %write_api_key|Felt 1 %n1|Felt 2 %n2|Felt 3 %n3|Felt 4 %n4|Felt 5 %n5|Felt 6 %n6|Felt 7 %n7|Felt 8 %n8"
+    
     export function tosendtext(write_api_key: string,
         n1: number,
         n2: number,
