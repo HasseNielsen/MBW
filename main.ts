@@ -128,7 +128,7 @@ namespace MBW {
     //% blockId="gopro_rec_mode"
     //% block="GoPro:|Funktion %rec_mode"
     
-    export function IFTTTSendData(rec_mode: string): void {
+    export function GoProRecMode(rec_mode: string): void {
         let message = "GOPRO "
             + rec_mode
         goFetch(message)
