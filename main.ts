@@ -122,18 +122,18 @@ namespace MBW {
 
     
     export enum GoProMode {
-        //% block="video"
+        //% block="Video"
         Video,
-        //% block="photo"
+        //% block="Photo"
         Photo
     }
      /**
      * GoPro: Vælg funktion.
-     * @param rec_mode describe parameter here, eg: Photo
+     * @param rec_mode describe parameter here, eg: Photo,Video
      */
     //% weight=60
     //% blockId="gopro_rec_mode"
-    //% block="GoPro:|Funktion %rec_mode"
+    //% block="GoPro:|Vælg funktion %rec_mode"
     
     export function GoProRecMode(rec_mode: GoProMode): void {
         let message = "GOPROMODE"
@@ -142,6 +142,29 @@ namespace MBW {
         basic.pause(1000)
     }
     
+    /**
+     * GoPro: Tag billede/start optagelse.
+     */
+    //% weight=59
+    //% blockId="gopro_shutter"
+    //% block="GoPro:| Tag billede/start optagelse"
+    export function GoProShutter(): void {
+      let message = "GOPRO SHUTTER"
+        goFetch(message)
+        basic.pause(1000)
+    }
+    
+    /**
+     * GoPro: Stop optagelse.
+     */
+    //% weight=58
+    //% blockId="gopro_stop"
+    //% block="GoPro:| Stop optagelse"
+    export function GoProStop(): void {
+      let message = "GOPRO STOP"
+        goFetch(message)
+        basic.pause(1000)
+    }    
     function goFetch(message: string){
         serial.writeString(message + "\u000D" + "\u000A")
     }
