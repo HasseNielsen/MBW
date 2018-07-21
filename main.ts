@@ -11,7 +11,8 @@ namespace MBW {
     * @param wifiTX Den pin Micro:bit'en modtager på, eg: SerialPin.P13
     */
     //% weight=100
-    //% blockId="wifi_init" block="Tilslutning af wifi-modulet|Forbind wifi RX til pin %wifiRX| og TX til pin %wifiTX|"
+    //% blockId="wifi_init" 
+    //% block="Tilslutning af wifi-modulet|Forbind wifi-modulets RX til pin %wifiRX|og TX til pin %wifiTX"
     export function initwifi(wifiRX: SerialPin, wifiTX: SerialPin): void {
         // Add code here
         basic.pause(1000)
