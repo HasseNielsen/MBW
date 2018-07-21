@@ -10,7 +10,7 @@ namespace MBW {
     * @param RXModule Den pin Micro:bit'en sender fra, eg: SerialPin.P12
     * @param TXModule Den pin Micro:bit'en modtager på, eg: SerialPin.P13
     */
-    //% weight=100
+    //% weight=10
     //% blockId="wifi_init" 
     //% block="Tilslutning af wifi-modulet|Forbind wifi-modulets RX til pin %RXModule|og TX til pin %TXModule"
 
@@ -32,9 +32,9 @@ namespace MBW {
      * @param ssid Det trådløse netværk du vil forbinde til, eg: "Navnet på dit netværk"
      * @param password Kodeordet til dit netværk, eg: "Dit kodeord"
      */
-    //% weight=10
+    //% weight=20
     //% blockId="wifiConfig"
-    //% block="Wifi-forbindelse|Opret forbindelse til dette netværk %ssid|Med dette kodeord %password"
+    //% block="Wifi-forbindelse|Netværk %ssid|Kodeord %password"
     
     export function wifiConfig(ssid: string, password: string): void {
         serial.writeLine("WIFI " + ssid + " " + password + "\u000D" + "\u000A")
@@ -53,7 +53,7 @@ namespace MBW {
  * @param filed7 describe parameter here, eg: 0
  * @param filed8 describe parameter here, eg: 0
  */
-    //% weight=97
+    //% weight=30
     //% blockId="thingspeak_send_data"
     //% block="ThingSpeak: Send data|Din api-nøgle %api_key|Felt 1 %filed1|Felt 2 %filed2|Felt 3 %filed3|Felt 4 %filed4|Felt 5 %filed5|Felt 6 %filed6|Felt 7 %filed7|Felt 8 %filed8"
     
