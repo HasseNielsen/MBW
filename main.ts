@@ -12,7 +12,7 @@ namespace MBW {
     */
     //% weight=100
     //% blockId="wifi_init" 
-    //% block="Tilslutning af wifi-modulet|Forbind wifi-modulets RX til pin %RXModule|og TX til pin %TXModule"
+    //% block="Tilslutning af wifi-modulet: Forbind wifi-modulets RX til pin %RXModule|og TX til pin %TXModule"
 
     export function attachModule(RXModule: SerialPin, TXModule: SerialPin): void {
         // Add code here
@@ -23,7 +23,7 @@ namespace MBW {
             BaudRate.BaudRate9600
         )
         basic.pause(1000)
-        serial.writeLine("" + "\u000D" + "\u000A")
+        goFetch("")
         basic.pause(1000)
     }
 
@@ -34,11 +34,10 @@ namespace MBW {
      */
     //% weight=90
     //% blockId="wifiConfig"
-    //% block="Wifi-forbindelse|Netværk %ssid|Kodeord %password"
+    //% block="Wifi-forbindelse: Netværk %ssid|Kodeord %password"
     
-    export function wifiConfig(ssid: string,
-                                password: string): void {
-        serial.writeLine("WIFI " + ssid + " " + password + "\u000D" + "\u000A")
+    export function wifiConfig(ssid: string, password: string): void {
+        goFetch("WIFI " + ssid + " " + password)
         basic.pause(15000)
     }
 
@@ -85,7 +84,11 @@ namespace MBW {
             + filed7
             + " "
             + filed8
-        serial.writeString(message + "\u000D" + "\u000A")
+        goFetch(message)
         basic.pause(1000)
+    }
+    
+    function goFetch(message: string){
+        serial.writeString(message + "\u000D" + "\u000A")
     }
 }
