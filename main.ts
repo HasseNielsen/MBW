@@ -120,6 +120,21 @@ namespace MBW {
         basic.pause(1000)
     }
     
+ /**
+ * GoPro: Vælg funktion.
+ * @param rec_mode describe parameter here, eg: Video,Photo
+ */
+    //% weight=60
+    //% blockId="gopro_rec_mode"
+    //% block="GoPro:|Funktion %rec_mode"
+    
+    export function IFTTTSendData(rec_mode: string): void {
+        let message = "GOPRO "
+            + rec_mode
+        goFetch(message)
+        basic.pause(1000)
+    }
+    
     function goFetch(message: string){
         serial.writeString(message + "\u000D" + "\u000A")
     }
