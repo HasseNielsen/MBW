@@ -1,17 +1,17 @@
 
 
 /**
- * Blocks for MBW
+ * Blocks til WIFI
  */
 //% color=#494a4e weight=10 icon="\uF0EB"
 namespace MBW {
     /**
-    * Set pin RX and TX for the wifi module.
-    * @param wifiRX describe parameter here, eg: SerialPin.P12
-    * @param wifiTX describe parameter here, eg: SerialPin.P13
+    * Angiv hvilke pins der bruges til at forbinde til wifi-modulet.|RX: Hvilken pin er forbundet til RX på Wifi modulet?|TX: Hvilken pin er forbundet til TX på Wifi modulet?
+    * @param wifiRX, eg: SerialPin.P12
+    * @param wifiTX, eg: SerialPin.P13
     */
     //% weight=100
-    //% blockId="wifi_init" block="Wifi config:\n Set wifi RX %wifiRX| TX %wifiTX|"
+    //% blockId="wifi_init" block="Wifi tilslutning:|Forbind wifi RX til pin %wifiRX| og TX til pin %wifiTX|"
     export function initwifi(wifiRX: SerialPin, wifiTX: SerialPin): void {
         // Add code here
         basic.pause(1000)
