@@ -119,17 +119,24 @@ namespace MBW {
         goFetch(message)
         basic.pause(1000)
     }
+
     
- /**
- * GoPro: Vælg funktion.
- * @param rec_mode describe parameter here, eg: Video,Photo
- */
+    export enum GoProMode {
+        //% block="video"
+        Video,
+        //% block="photo"
+        Photo
+    }
+     /**
+     * GoPro: Vælg funktion.
+     * @param rec_mode describe parameter here, eg: Photo
+     */
     //% weight=60
     //% blockId="gopro_rec_mode"
     //% block="GoPro:|Funktion %rec_mode"
     
-    export function GoProRecMode(rec_mode: string): void {
-        let message = "GOPRO "
+    export function GoProRecMode(rec_mode: GoProMode): void {
+        let message = "GOPROMODE"
             + rec_mode
         goFetch(message)
         basic.pause(1000)
