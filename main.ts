@@ -7,19 +7,19 @@
 namespace MBW {
     /**
     * Angiv hvilke pins der bruges til at forbinde til wifi-modulet. Hvilken pin på Micro:bit'en er forbundet til henholdsvis RX og TX på Wifi modulet?
-    * @param wifiRX Den pin Micro:bit'en sender fra, eg: SerialPin.P12
-    * @param wifiTX Den pin Micro:bit'en modtager på, eg: SerialPin.P13
+    * @param RXModule Den pin Micro:bit'en sender fra, eg: SerialPin.P12
+    * @param TXModule Den pin Micro:bit'en modtager på, eg: SerialPin.P13
     */
     //% weight=100
     //% blockId="wifi_init" 
-    //% block="Tilslutning af wifi-modulet|Forbind wifi-modulets RX til pin %wifiRX|og TX til pin %wifiTX"
+    //% block="Tilslutning af wifi-modulet|Forbind wifi-modulets RX til pin %RXModule|og TX til pin %TXModule"
 
-    export function initwifi(wifiRX: SerialPin, wifiTX: SerialPin): void {
+    export function attachModule(RXModule: SerialPin, TXModule: SerialPin): void {
         // Add code here
         basic.pause(1000)
         serial.redirect(
-            wifiRX,
-            wifiTX,
+            RXModule,
+            TXModule,
             BaudRate.BaudRate9600
         )
         basic.pause(1000)
@@ -43,50 +43,48 @@ namespace MBW {
 
     /**
  * ThingSpeak: Send data.
- * @param write_api_key describe parameter here, eg: "Din api-nøgle fra ThingSpeak"
- * @param n1 describe parameter here, eg: 0
- * @param n2 describe parameter here, eg: 0
- * @param n3 describe parameter here, eg: 0
- * @param n4 describe parameter here, eg: 0
- * @param n5 describe parameter here, eg: 0
- * @param n6 describe parameter here, eg: 0
- * @param n7 describe parameter here, eg: 0
- * @param n8 describe parameter here, eg: 0
+ * @param api_key describe parameter here, eg: "Din api-nøgle fra ThingSpeak"
+ * @param filed1 describe parameter here, eg: 0
+ * @param filed2 describe parameter here, eg: 0
+ * @param filed3 describe parameter here, eg: 0
+ * @param filed4 describe parameter here, eg: 0
+ * @param filed5 describe parameter here, eg: 0
+ * @param filed6 describe parameter here, eg: 0
+ * @param filed7 describe parameter here, eg: 0
+ * @param filed8 describe parameter here, eg: 0
  */
     //% weight=97
-    //% blockId="send_text"
-    //% block="ThingSpeak: Send data|Din api-nøgle %write_api_key|Felt 1 %n1|Felt 2 %n2|Felt 3 %n3|Felt 4 %n4|Felt 5 %n5|Felt 6 %n6|Felt 7 %n7|Felt 8 %n8"
+    //% blockId="thingspeak_send_data"
+    //% block="ThingSpeak: Send data|Din api-nøgle %api_key|Felt 1 %filed1|Felt 2 %filed2|Felt 3 %filed3|Felt 4 %filed4|Felt 5 %filed5|Felt 6 %filed6|Felt 7 %filed7|Felt 8 %filed8"
     
-    export function tosendtext(write_api_key: string,
-        n1: number,
-        n2: number,
-        n3: number,
-        n4: number,
-        n5: number,                         
-        n6: number,
-        n7: number,                        
-        n8: number): void {
-        let text = ""
-        text = "GET /update?key="
-            + write_api_key
+    export function thingspeakSendData(write_api_key: string,
+        filed1: number,
+        filed2: number,
+        filed3: number,
+        filed4: number,
+        filed5: number,                         
+        filed6: number,
+        filed7: number,                        
+        filed8: number): void {
+        let message = "THINGSPEAK "
+            + api_key
             + " "
-            + n1
+            + filed1
             + " "
-            + n2
+            + filed2
             + " "
-            + n3
+            + filed3
             + " "
-            + n4
+            + filed4
             + " "
-            + n5
+            + filed5
             + " "
-            + n6
+            + filed6
             + " "
-            + n7
+            + filed7
             + " "
-            + n8
-        serial.writeString(text + "\u000D" + "\u000A")
-        basic.pause(8000)
-        // Add code here
+            + filed8
+        serial.writeString(message + "\u000D" + "\u000A")
+        basic.pause(1000)
     }
 }
