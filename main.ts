@@ -57,7 +57,7 @@ namespace MBW {
     //% blockId="thingspeak_send_data"
     //% block="ThingSpeak: Send data|Din api-nøgle %api_key|Felt 1 %filed1|Felt 2 %filed2|Felt 3 %filed3|Felt 4 %filed4|Felt 5 %filed5|Felt 6 %filed6|Felt 7 %filed7|Felt 8 %filed8"
     
-    export function thingspeakSendData(write_api_key: string,
+    export function thingSpeakSendData(api_key: string,
         filed1: number,
         filed2: number,
         filed3: number,
