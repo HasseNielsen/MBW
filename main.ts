@@ -90,12 +90,12 @@ namespace MBW {
     
     
  /**
- * IFTTT: Send web request to webhook.
- * @param key describe parameter here, eg: "Den sidste del af din webhook url, bKYZqPvHfkrEfgyg6YVpjd"
+ * IFTTT: Send besked til webhook.
+ * @param key describe parameter here, eg: "Den sidste del af din webhook url, eks. bKYZqPvHfkrEfgyg6YVpjd"
  * @param event_name describe parameter here, eg: "Event Name"
- * @param value1 describe parameter here, eg: "Navn"
- * @param value2 describe parameter here, eg: "Højde"
- * @param value3 describe parameter here, eg: "Alder"
+ * @param value1 describe parameter here, eg: "Tekst 1"
+ * @param value2 describe parameter here, eg: "Tekst 2"
+ * @param value3 describe parameter here, eg: "Tekst 3"
  */
     //% weight=70
     //% blockId="ifttt_send_data"
