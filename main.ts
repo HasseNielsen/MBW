@@ -101,7 +101,8 @@ namespace MBW {
     //% blockId="ifttt_send_data"
     //% block="IFTTT: Kald webhook|Din unikke nøgle %key|Din event %event_name|Værdi 1 %value1|Værdi 2 %value2|Værdi 3 %value3"
     
-    export function IFTTTSendData(event_name: string,
+    export function IFTTTSendData(key: string,
+        event_name: string,
         value1: string,
         value2: string,
         value3: string): void {
