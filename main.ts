@@ -13,11 +13,6 @@ namespace MBW {
     //% weight=100
     //% blockId="wifi_init" 
     //% block="Tilslutning af wifi-modulet|Forbind wifi-modulets RX til pin %wifiRX|og TX til pin %wifiTX"
-    //% wifiRX.fieldEditor="gridpicker" wifiRX.fieldOptions.columns=3
-    //% wifiRX.fieldOptions.tooltips="false"
-    //% wifiTX.fieldEditor="gridpicker" wifiTX.fieldOptions.columns=3
-    //% wifiTX.fieldOptions.tooltips="false"
-    //% blockGap=8
 
     export function initwifi(wifiRX: SerialPin, wifiTX: SerialPin): void {
         // Add code here
