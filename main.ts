@@ -12,7 +12,7 @@ namespace MBW {
     */
     //% weight=100
     //% blockId="wifi_init" 
-    //% block="Tilslutning af wifi-modulet: Forbind wifi-modulets RX til pin %RXModule|og TX til pin %TXModule"
+    //% block="Tilslutning af wifi-modulet:|Forbind wifi-modulets RX til pin %RXModule|og TX til pin %TXModule"
 
     export function attachModule(RXModule: SerialPin, TXModule: SerialPin): void {
         // Add code here
