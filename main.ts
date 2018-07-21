@@ -6,7 +6,7 @@
 //% color=#494a4e weight=10 icon="\uF0EB"
 namespace MBW {
     /**
-    * Angiv hvilke pins der bruges til at forbinde til wifi-modulet.|RX: Hvilken pin er forbundet til RX på Wifi modulet?|TX: Hvilken pin er forbundet til TX på Wifi modulet?
+    * Angiv hvilke pins der bruges til at forbinde til wifi-modulet. Hvilken pin på Micro:bit'en er forbundet til henholdsvis RX og TX på Wifi modulet?
     * @param wifiRX Den pin Micro:bit'en sender fra, eg: SerialPin.P12
     * @param wifiTX Den pin Micro:bit'en modtager på, eg: SerialPin.P13
     */
@@ -30,7 +30,7 @@ namespace MBW {
      * @param ssid Det trådløse netværk du vil forbinde til, eg: "Navnet på dit netværk"
      * @param password Kodeordet til dit netværk, eg: "Dit kodeord"
      */
-    //% weight=10 blockId="wifiConfig" block="Wifi-forbindelse: opret forbindelse til dette netværk: %ssid| Med dette kodeord: %password"
+    //% weight=10 blockId="wifiConfig" block="Wifi-forbindelse|Opret forbindelse til dette netværk: %ssid|Med dette kodeord: %password"
     export function wifiConfig(ssid: string, password: string): void {
         serial.writeLine("WIFI " + ssid + " " + password + "\u000D" + "\u000A")
         basic.pause(15000)
