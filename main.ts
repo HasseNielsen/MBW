@@ -54,6 +54,7 @@ namespace MBW {
  * @param filed8 describe parameter here, eg: 0
  */
     //% weight=80
+    //% subcategory=ThingSpeak
     //% blockId="thingspeak_send_data"
     //% block="ThingSpeak: Send data|Din api-nøgle %api_key|Felt 1 %filed1|Felt 2 %filed2|Felt 3 %filed3|Felt 4 %filed4|Felt 5 %filed5|Felt 6 %filed6|Felt 7 %filed7|Felt 8 %filed8"
     
@@ -98,6 +99,7 @@ namespace MBW {
  * @param value3 describe parameter here, eg: "Tekst 3"
  */
     //% weight=70
+    //% subcategory=IFTTT
     //% blockId="ifttt_send_data"
     //% block="IFTTT: Kald webhook|Din unikke nøgle %key|Din event %event_name|Værdi 1 %value1|Værdi 2 %value2|Værdi 3 %value3"
     
@@ -132,6 +134,7 @@ namespace MBW {
      * @param rec_mode describe parameter here, eg: Photo,Video
      */
     //% weight=60
+    //% subcategory=GoPro
     //% blockId="gopro_rec_mode"
     //% block="GoPro:|Vælg funktion %rec_mode"
     
@@ -146,6 +149,7 @@ namespace MBW {
      * GoPro: Tag billede/start optagelse.
      */
     //% weight=59
+    //% subcategory=GoPro
     //% blockId="gopro_shutter"
     //% block="GoPro:| Tag billede/start optagelse"
     export function GoProShutter(): void {
@@ -158,6 +162,7 @@ namespace MBW {
      * GoPro: Stop optagelse.
      */
     //% weight=58
+    //% subcategory=GoPro
     //% blockId="gopro_stop"
     //% block="GoPro:| Stop optagelse"
     export function GoProStop(): void {
