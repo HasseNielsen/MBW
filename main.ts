@@ -170,9 +170,6 @@ namespace MBW {
         goFetch(message)
         basic.pause(1000)
     }    
-    function goFetch(message: string){
-        serial.writeString(message + "\u000D" + "\u000A")
-    }
     
     /**
      * Hardware: Firmware version.
