@@ -125,9 +125,9 @@ namespace MBW {
     
     export enum GoProMode {
         //% block="Video"
-        Video,
+        VIDEO,
         //% block="Photo"
-        Photo
+        PHOTO
     }
      /**
      * GoPro: Vælg funktion.
@@ -139,7 +139,7 @@ namespace MBW {
     //% block="GoPro:|Vælg funktion %rec_mode"
     
     export function GoProRecMode(rec_mode: GoProMode): void {
-        let message = "GOPROMODE"
+        let message = "GOPRO "
             + rec_mode
         goFetch(message)
         basic.pause(1000)
@@ -170,6 +170,37 @@ namespace MBW {
         goFetch(message)
         basic.pause(1000)
     }    
+    function goFetch(message: string){
+        serial.writeString(message + "\u000D" + "\u000A")
+    }
+    
+    /**
+     * Hardware: Firmware version.
+     */
+    //% weight=58
+    //% subcategory=Hardware
+    //% blockId="hard_version"
+    //% block="Hardware:| Vis firmware version"
+    export function HardwareVersion(): void {
+      let message = "VERSION"
+        goFetch(message)
+        basic.pause(1000)
+    }
+
+    /**
+     * Hardware: update firmware.
+     */
+    //% weight=59
+    //% subcategory=Hardware
+    //% blockId="hard_update"
+    //% block="Hardware:| Update firmware"
+    export function HardwareUpdate(): void {
+      let message = "UPDATE"
+        goFetch(message)
+        basic.pause(1000)
+    }
+        
+    
     function goFetch(message: string){
         serial.writeString(message + "\u000D" + "\u000A")
     }
