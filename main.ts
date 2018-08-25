@@ -177,7 +177,7 @@ namespace MBW {
     /**
      * Hardware: Firmware version.
      */
-    //% weight=58
+    //% weight=57
     //% subcategory=Hardware
     //% blockId="hard_version"
     //% block="Hardware:| Vis firmware version"
@@ -190,7 +190,7 @@ namespace MBW {
     /**
      * Hardware: update firmware.
      */
-    //% weight=59
+    //% weight=56
     //% subcategory=Hardware
     //% blockId="hard_update"
     //% block="Hardware:| Update firmware"
