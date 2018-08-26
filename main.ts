@@ -37,7 +37,7 @@ namespace MBW {
     //% block="Wifi-forbindelse: Netværk %ssid|Kodeord %password"
     
     export function wifiConfig(ssid: string, password: string): void {
-        goFetch("WIFI " + ssid + " " + password)
+        goFetch("WIFI " + ReplaceSpace(ssid) + " " + ReplaceSpace(password))
         basic.pause(15000)
     }
 
@@ -111,13 +111,13 @@ namespace MBW {
         let message = "IFTTT "
             + key
             + " "
-            + event_name
+            + ReplaceSpace(event_name)
             + " "
-            + value1
+            + ReplaceSpace(value1)
             + " "
-            + value2
+            + ReplaceSpace(value2)
             + " "
-            + value3
+            + ReplaceSpace(value3)
         goFetch(message)
         basic.pause(1000)
     }
@@ -196,9 +196,23 @@ namespace MBW {
         goFetch(message)
         basic.pause(1000)
     }
-        
     
     function goFetch(message: string){
         serial.writeString(message + "\u000D" + "\u000A")
+    }
+    
+    function ReplaceSpace(Data: string): string {
+        let Out = ""
+        let i = Data.length
+        
+        for (let index = 0; index < i+1; index++) {
+            if (Data.charAt(index) === " ") {
+                Out = Out + "¦"
+            } else {
+                Out = Out + Data.charAt(index)
+            }
+        }
+
+        return Out
     }
 }
