@@ -124,9 +124,9 @@ namespace MBW {
 
     export enum WriteMode {
         //% block="Tilføj"
-        APPEND = 0,
+        APPEND = 1,
         //% block="Overskriv"
-        OVERWRITE = 1
+        OVERWRITE = 0
     }
     /**
     * SD-kort: Vælg funktion.
