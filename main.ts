@@ -22,7 +22,7 @@ namespace MBW {
             TXModule,
             BaudRate.BaudRate9600
         )
-        basic.pause(1000)
+        basic.pause(6000)
         goFetch("")
         basic.pause(1000)
     }
