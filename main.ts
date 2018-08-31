@@ -122,6 +122,31 @@ namespace MBW {
         basic.pause(1000)
     }
 
+    export enum WriteMode {
+        //% block="Tilføj"
+        A,
+        //% block="Overskriv"
+        O
+    }
+    /**
+    * SD-kort: Vælg funktion.
+    * @param sd_write_mode Vil du tilføje data til filen eller overskrive, eg: Tilføj,Overskriv
+    * @param sd_write_file Den fil du vil skrive til, eg: minfil.txt
+    * @param sd_write_data Den data du vil gemme, eg: "2020-12-24;-3c;sne"
+    */
+    //% weight=150
+    //% subcategory=SD-Kort
+    //% blockId="sd_write"
+    //% block="Gem på SD-kort:|Vælg funktion %sd_write_mode| Fil: %sd_write_file| Data: %sd_write_data|"
+
+    export function SdWrite(sd_write_mode: WriteMode, sd_write_file: string, sd_write_data: string): void {
+        let message = "WRITE "
+            + sd_write_mode
+            + " " + ReplaceSpace(sd_write_file)
+            + " " + ReplaceSpace(sd_write_data);
+        goFetch(message)
+        basic.pause(500)
+    }
     
     export enum GoProMode {
         //% block="Video"
