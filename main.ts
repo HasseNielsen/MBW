@@ -124,9 +124,9 @@ namespace MBW {
 
     export enum WriteMode {
         //% block="Tilføj"
-        "A",
+        APPEND = 0,
         //% block="Overskriv"
-        "O"
+        OVERWRITE = 1
     }
     /**
     * SD-kort: Vælg funktion.
@@ -150,9 +150,9 @@ namespace MBW {
     
     export enum GoProMode {
         //% block="Video"
-        "VIDEO",
+        VIDEO = 1,
         //% block="Photo"
-        "PHOTO"
+        PHOTO = 2
     }
      /**
      * GoPro: Vælg funktion.
