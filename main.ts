@@ -164,8 +164,13 @@ namespace MBW {
     //% block="GoPro:|Vælg funktion %rec_mode"
     
     export function GoProRecMode(rec_mode: GoProMode): void {
+        if (rec_mode == 1){
+            let mode = "VIDEO";
+        } elseif {
+            let mode = "PHOTO";
+        }
         let message = "GOPRO "
-            + rec_mode
+            + mode
         goFetch(message)
         basic.pause(1000)
     }
