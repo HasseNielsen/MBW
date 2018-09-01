@@ -232,10 +232,8 @@ namespace MBW {
     
     function goFetch(message: string){
         if (!message) {return}
-        /*
+        basic.showString("message) 
         serial.writeString(message + "\u000D" + "\u000A")
-        */
-        uBit.serial.send(message);
     }
     
     function ReplaceSpace(Data: string): string {
