@@ -1,4 +1,4 @@
-
+serial.onDataReceived(serial.delimiters(Delimiters.NewLine), () => {})
 
 /**
  * Blocks til WIFI
@@ -232,7 +232,6 @@ namespace MBW {
     
     function goFetch(message: string){
         serial.writeString(message + "\u000D" + "\u000A")
-
     }
     
     function ReplaceSpace(Data: string): string {
