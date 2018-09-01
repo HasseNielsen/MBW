@@ -38,7 +38,7 @@ namespace MBW {
     
     export function wifiConfig(ssid: string, password: string): void {
         goFetch("WIFI " + ReplaceSpace(ssid) + " " + ReplaceSpace(password))
-        //basic.pause(15000)
+        basic.pause(15000)
     }
 
  /**
