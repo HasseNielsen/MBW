@@ -231,8 +231,8 @@ namespace MBW {
     }
     
     function goFetch(message: string){
-        //serial.writeString(message + "\u000D" + "\u000A")
-        serial.writeString(message)
+        serial.writeString(message + "\u000D" + "\u000A")
+
     }
     
     function ReplaceSpace(Data: string): string {
