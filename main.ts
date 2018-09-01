@@ -232,7 +232,9 @@ namespace MBW {
     
     function goFetch(message: string){
         if (!message) {return}
-        //serial.writeString(message + "\u000D" + "\u000A")
+        /*
+        serial.writeString(message + "\u000D" + "\u000A")
+        */
         uBit.serial.send(message);
     }
     
