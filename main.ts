@@ -279,6 +279,19 @@ namespace MBW {
               goFetch(message)
               basic.pause(1000)
           }
+
+          /**
+           * Beebotte: Stop med at lytte.
+           */
+           //% weight=160
+           //% subcategory=BEEBOTTE
+           //% blockId="beebotte_listen_stop"
+          //% block="Beebotte:| Stop med at lytte"
+          export function BeebotteListenStop(): void {
+            let message = "MQTTCLOSE"
+              goFetch(message)
+              basic.pause(1000)
+          }
     
     function goFetch(message: string){
         serial.writeString(message + "\u000D" + "\u000A")
