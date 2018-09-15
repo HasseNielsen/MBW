@@ -229,6 +229,34 @@ namespace MBW {
         goFetch(message)
         basic.pause(1000)
     }
+
+    /**
+    * Beebotte MQTT: Send besked til Beebotte.
+    * @param channel describe parameter here, eg: "Den kanal din resource findes i, eks. stuen"
+    * @param resource describe parameter here, eg: "loftslampe"
+    * @param token describe parameter here, eg: "MIN TOKEN"
+    * @param data describe parameter here, eg: "SLUK"
+    */
+       //% weight=150
+       //% subcategory=BEEBOTTE
+       //% blockId="beebotte_send_data"
+       //% block="Beebotte: Send besked|Til kanal %channel|Din resource %resource|Token %token|Data %data"
+       
+       export function BeebotteSendData(channel: string,
+           resource: string,
+           token: string,
+           data: string): void {
+           let message = "MQTTSEND "
+               + ReplaceSpace(channel)
+               + " "
+               + ReplaceSpace(resource)
+               + " "
+               + ReplaceSpace(token)
+               + " "
+               + ReplaceSpace(data)
+           goFetch(message)
+           basic.pause(1000)
+       }
     
     function goFetch(message: string){
         serial.writeString(message + "\u000D" + "\u000A")
