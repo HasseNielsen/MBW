@@ -257,6 +257,30 @@ namespace MBW {
            goFetch(message)
            basic.pause(1000)
        }
+
+       /**
+       * Beebotte MQTT: Lyt efter besked fra Beebotte.
+       * @param channel describe parameter here, eg: "Den kanal din resource findes i, eks. stuen"
+       * @param resource describe parameter here, eg: "loftslampe"
+       * @param token describe parameter here, eg: "MIN TOKEN"
+       */
+          //% weight=155
+          //% subcategory=BEEBOTTE
+          //% blockId="beebotte_listen_data"
+          //% block="Beebotte: Lyt efter besked|Fra kanal %channel|Din resource %resource|Token %token"
+          
+          export function BeebotteListen(channel: string,
+              resource: string,
+              token: string): void {
+              let message = "MQTT "
+                  + ReplaceSpace(channel)
+                  + " "
+                  + ReplaceSpace(resource)
+                  + " "
+                  + ReplaceSpace(token)
+              goFetch(message)
+              basic.pause(1000)
+          }
     
     function goFetch(message: string){
         serial.writeString(message + "\u000D" + "\u000A")
