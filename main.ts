@@ -307,9 +307,10 @@ namespace MBW {
            //% weight=165
            //% subcategory=BEEBOTTE
            //% blockId="beebotte_trigger"
-          //% block="Beebotte:| Hvis besked modtages: BeebotteRespons"
-    export function BeebotteTrigger() {
-        serial.writeLine(BeebotteRespons);
+          //% block="Beebotte:| Hvis besked modtages: $handlerArg1"
+            //% draggableParameters
+    export function BeebotteTrigger(handler: (handlerArg: string) => void) {
+        serial.writeLine(handlerArg);
     }
     
     function goFetch(message: string){
