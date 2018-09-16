@@ -1,4 +1,12 @@
-serial.onDataReceived(serial.delimiters(Delimiters.NewLine), () => {})
+let BeebotteRespons = ""
+serial.onDataReceived(serial.delimiters(Delimiters.NewLine), () => {
+    BeebotteRespons  = serial.readString()
+    if (BeebotteRespons .substr(0, 6) == "#DATA#") {
+        BeebotteRespons  = BeebotteRespons .substr(6, 2)
+        MBW.BeebotteTrigger();
+    }
+    BeebotteRespons  = ""
+})
 
 /**
  * Blocks til WIFI
@@ -292,6 +300,17 @@ namespace MBW {
               goFetch(message)
               basic.pause(1000)
           }
+    
+            /**
+           * Beebotte: Hvis der kommer en besked fra BeeBotte.
+           */
+           //% weight=165
+           //% subcategory=BEEBOTTE
+           //% blockId="beebotte_trigger"
+          //% block="Beebotte:| Hvis besked modtages: BeebotteRespons"
+    export function BeebotteTrigger() {
+        serial.writeLine(BeebotteRespons);
+    }
     
     function goFetch(message: string){
         serial.writeString(message + "\u000D" + "\u000A")
