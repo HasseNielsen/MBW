@@ -1,7 +1,7 @@
 {
     "name": "MBW",
     "version": "0.0.3",
-    "description": "A basic test for MBW_1",
+    "description": "Denne pakke forbinder din Micro:bit med internettet.",
     "license": "Other",
     "authors": "Hasse Lykke Nielsen",
     "dependencies": {
