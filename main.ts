@@ -10,8 +10,8 @@ serial.onDataReceived(serial.delimiters(Delimiters.NewLine), () => {
 namespace MBW {
     /**
     * Angiv hvilke pins der bruges til at forbinde til wifi-modulet. Hvilken pin på Micro:bit'en er forbundet til henholdsvis RX og TX på Wifi modulet?
-    * @param RXModule Den pin Micro:bit'en sender fra, eg: SerialPin.P12
-    * @param TXModule Den pin Micro:bit'en modtager på, eg: SerialPin.P13
+    * @param RXModule Den pin Micro:bit'en sender fra, eg: SerialPin.P2
+    * @param TXModule Den pin Micro:bit'en modtager på, eg: SerialPin.P1
     */
     //% weight=100
     //% blockId="wifi_init" 
